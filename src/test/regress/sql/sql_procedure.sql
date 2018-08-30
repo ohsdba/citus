@@ -96,7 +96,6 @@ CALL test_procedure_modify_insert_commit(2,30);
 SELECT * FROM test_table ORDER BY 1, 2;
 
 -- delete is commited but insert is rolled back
--- there is a bug #2371 on that preventing rollback
 CREATE PROCEDURE test_procedure_rollback(tt_id int, tt_org_id int) LANGUAGE PLPGSQL AS $$
 BEGIN
 	DELETE FROM test_table;

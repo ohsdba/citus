@@ -36,6 +36,10 @@ typedef struct XactShardConnSet
 extern bool AllModificationsCommutative;
 extern bool EnableDeadlockPrevention;
 
+/* indicates whether the current execution is happening within a stored procedure */
+extern bool IsStoredProcedure;
+
+
 extern void CitusModifyBeginScan(CustomScanState *node, EState *estate, int eflags);
 extern TupleTableSlot * RouterSelectExecScan(CustomScanState *node);
 extern TupleTableSlot * RouterModifyExecScan(CustomScanState *node);
